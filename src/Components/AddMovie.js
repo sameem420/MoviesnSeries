@@ -1,21 +1,46 @@
-import React from "react";
+import React, { useState } from "react";
 import { Button, Col, Container, Form, Row } from "react-bootstrap";
 
 function AddMovie() {
+  const [seriesRecord, setSeriesRecord] = useState({
+    name: undefined,
+    startingYear: undefined,
+    season: undefined
+  });
+
+  const addSeriesRecord = (e) => {
+    e.preventDefault();
+    console.log("Function called!");
+    const seriesData = [...seriesRecord, {
+      
+    }];
+  };
+
   return (
     <Container>
       <Row>
         <Col>
-          <Form>
-            <Form.Group className="mb-3" controlId="formBasicEmail">
-              <Form.Label>Movie or Series</Form.Label>
-              <Form.Control
-                type="text"
-                placeholder="Enter Movie or Series name"
-              />
+          <Form onSubmit={(e) => addSeriesRecord(e)}>
+            <Form.Group className="mb-3" controlId="seriesName">
+              <Form.Label>Series Name</Form.Label>
+              <Form.Control type="text" placeholder="eg: Teen Wolf" value={seriesRecord.name} />
+            </Form.Group>
+            <Form.Group className="mb-3" controlId="seriesYear">
+              <Form.Label>Series Starting Year</Form.Label>
+              <Form.Control type="text" placeholder="eg: 2005" value={seriesRecord.startingYear} />
+            </Form.Group>
+            <Form.Group className="mb-3" controlId="seriesSeason">
+              <Form.Label>Series Season</Form.Label>
+              <Form.Select aria-label="series-season" value={seriesRecord.season}>
+                <option value="Season 1">Season 1</option>
+                <option value="Season 2">Season 2</option>
+                <option value="Season 3">Season 3</option>
+                <option value="Season 4">Season 4</option>
+                <option value="Season 5">Season 5</option>
+              </Form.Select>
             </Form.Group>
             <Button variant="primary" type="submit">
-              Add
+              Add Series
             </Button>
           </Form>
         </Col>
