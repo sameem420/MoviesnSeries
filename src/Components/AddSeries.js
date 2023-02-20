@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import { Button, Col, Container, Form, Row } from "react-bootstrap";
 
 function AddMovie() {
-  const [movieRecord, setMovieRecord] = useState({
+  const [seriesRecord, setSeriesRecord] = useState({
     name: undefined,
-    releaseYear: undefined,
+    startingYear: undefined,
     season: undefined
   });
 
