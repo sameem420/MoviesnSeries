@@ -5,33 +5,42 @@ function AddMovie() {
   const [movieRecord, setMovieRecord] = useState({
     name: undefined,
     releaseYear: undefined,
-    season: undefined
+    season: undefined,
   });
 
-  const addSeriesRecord = (e) => {
+  const addMovieRecord = (e) => {
     e.preventDefault();
     console.log("Function called!");
-    const seriesData = [...seriesRecord, {
-      
-    }];
+    const movieData = [...movieRecord, {}];
   };
 
   return (
     <Container>
       <Row>
         <Col>
-          <Form onSubmit={(e) => addSeriesRecord(e)}>
+          <Form onSubmit={(e) => addMovieRecord(e)}>
             <Form.Group className="mb-3" controlId="seriesName">
               <Form.Label>Series Name</Form.Label>
-              <Form.Control type="text" placeholder="eg: Teen Wolf" value={seriesRecord.name} />
+              <Form.Control
+                type="text"
+                placeholder="eg: Teen Wolf"
+                value={movieRecord.name}
+              />
             </Form.Group>
             <Form.Group className="mb-3" controlId="seriesYear">
               <Form.Label>Series Starting Year</Form.Label>
-              <Form.Control type="text" placeholder="eg: 2005" value={seriesRecord.startingYear} />
+              <Form.Control
+                type="text"
+                placeholder="eg: 2005"
+                value={movieRecord.startingYear}
+              />
             </Form.Group>
             <Form.Group className="mb-3" controlId="seriesSeason">
               <Form.Label>Series Season</Form.Label>
-              <Form.Select aria-label="series-season" value={seriesRecord.season}>
+              <Form.Select
+                aria-label="series-season"
+                value={movieRecord.season}
+              >
                 <option value="Season 1">Season 1</option>
                 <option value="Season 2">Season 2</option>
                 <option value="Season 3">Season 3</option>
