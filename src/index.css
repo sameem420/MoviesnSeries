@@ -1,22 +1,12 @@
-@import url("https://fonts.googleapis.com/css2?family=Cairo&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Baumans&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Alexandria&display=swap");
-
-@import url("https://fonts.googleapis.com/css2?family=Megrim&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Bungee+Shade&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Silkscreen&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bungee+Shade&family=Nunito&family=Silkscreen&display=swap");
 
 * {
   margin: 0;
-  font-family: "Cairo", sans-serif;
-  font-family: "Alexandria", sans-serif;
 }
-body {
-  font-family: "Alexandria", sans-serif;
+html, body {
+  font-family: "Nunito", Verdana, Geneva, Tahoma, sans-serif;
 }
 .main-heading {
-  font-family: "Baumans", cursive;
-  font-family: "Megrim", cursive;
   font-family: "Bungee Shade", cursive;
-  font-family: "Silkscreen", cursive;
+  /* font-family: "Silkscreen", cursive; */
 }
