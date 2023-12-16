@@ -5,7 +5,7 @@ function App() {
   return (
     <div className="container-fluid">
       <h1 className="text-center main-heading">
-        TVLog
+        TVLogz
       </h1>
       <AddMovie />
     </div>
