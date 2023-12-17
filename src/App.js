@@ -1,5 +1,6 @@
 import "./App.css";
 import AddMovie from "./Components/AddMovie";
+import AddSeries from "./Components/AddSeries";
 
 function App() {
   return (
@@ -7,7 +8,7 @@ function App() {
       <h1 className="text-center main-heading">
         TVLogz
       </h1>
-      <AddMovie />
+      <AddSeries />
     </div>
   );
 }

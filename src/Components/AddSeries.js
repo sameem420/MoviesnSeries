@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import { Button, Col, Container, Form, Row } from "react-bootstrap";
 
-function AddMovie() {
+
+function AddSeries() {
   const [seriesRecord, setSeriesRecord] = useState({
     name: undefined,
     startingYear: undefined,
@@ -17,41 +17,41 @@ function AddMovie() {
   };
 
   return (
-    <Container>
-      <Row>
-        <Col>
-          <Form onSubmit={(e) => addSeriesRecord(e)}>
-            <Form.Group className="mb-3" controlId="seriesName">
-              <Form.Label>Series Name</Form.Label>
-              <Form.Control type="text" placeholder="eg: Teen Wolf" value={seriesRecord.name} />
-            </Form.Group>
-            <Form.Group className="mb-3" controlId="seriesYear">
-              <Form.Label>Series Starting Year</Form.Label>
-              <Form.Control type="text" placeholder="eg: 2005" value={seriesRecord.startingYear} />
-            </Form.Group>
-            <Form.Group className="mb-3" controlId="seriesSeason">
-              <Form.Label>Series Season</Form.Label>
-              <Form.Select aria-label="series-season" value={seriesRecord.season}>
+    <div className="col">
+      <div className="row">
+        <div className="col">
+          <form onSubmit={(e) => addSeriesRecord(e)}>
+            <div className="form-group mb-3" controlId="seriesName">
+              <label className="form-label">Series Name</label>
+              <input className="form-control" type="text" placeholder="eg: Teen Wolf" value={seriesRecord.name} />
+            </div>
+            <div className="form-group mb-3" controlId="seriesYear">
+              <label className="form-label">Series Starting Year</label>
+              <input className="form-control" type="text" placeholder="eg: 2005" value={seriesRecord.startingYear} />
+            </div>
+            <div className="form-group mb-3" controlId="seriesSeason">
+              <label className="form-label">Series Season</label>
+              <select className="form-control" aria-label="series-season" value={seriesRecord.season}>
                 <option value="Season 1">Season 1</option>
                 <option value="Season 2">Season 2</option>
                 <option value="Season 3">Season 3</option>
                 <option value="Season 4">Season 4</option>
                 <option value="Season 5">Season 5</option>
-              </Form.Select>
-            </Form.Group>
-            <Button variant="primary" type="submit">
+              </select>
+            </div>
+            <button className="btn btn-primary" type="submit">
               Add Series
-            </Button>
-          </Form>
-        </Col>
-      </Row>
-      <Row md={12} className="justify-content-center mx-auto">
-        <Col md>1 of 3</Col>
-        <Col md>2 of 3</Col>
-        <Col md>3 of 3</Col>
-      </Row>
-    </Container>
+            </button>
+          </form>
+        </div>
+      </div>
+      <div className="row justify-content-center mx-auto">
+        <div className="col-md">1 of 3</div>
+        <div className="col-md">2 of 3</div>
+        <div className="col-md">3 of 3</div>
+      </div>
+    </div>
   );
 }
 
-export default AddMovie;
+export default AddSeries;
