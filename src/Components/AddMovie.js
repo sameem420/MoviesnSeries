@@ -19,7 +19,7 @@ function AddMovie() {
         <div className="col">
           <form onSubmit={(e) => addMovieRecord(e)}>
             <div className="form-group mb-3" controlId="seriesName">
-              <label className="form-label">Series Name</label>
+              <label className="form-label">Movie Name</label>
               <input className="form-control"
                 type="text"
                 placeholder="eg: Teen Wolf"
@@ -27,7 +27,7 @@ function AddMovie() {
               />
             </div>
             <div className="form-group mb-3" controlId="seriesYear">
-              <label className="form-label">Series Starting Year</label>
+              <label className="form-label">Movie Release Year</label>
               <input className="form-control"
                 type="text"
                 placeholder="eg: 2005"
