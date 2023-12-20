@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 
 function AddSeries() {
+  const seriesItems = JSON.parse(localStorage.getItem("seriesRecords"));
+
   const [seriesInfo, setSeriesInfo] = useState({
     name: undefined,
     startingYear: undefined,
@@ -8,7 +10,7 @@ function AddSeries() {
     watched: false,
   });
 
-  const [seriesRecords, setSeriesRecords] = useState([]);
+  const [seriesRecords, setSeriesRecords] = useState(seriesItems || []);
 
   const saveSeriesInfo = (e) => {
     e.preventDefault();
@@ -17,9 +19,6 @@ function AddSeries() {
 
   useEffect(() => {
     localStorage.setItem("seriesRecords", JSON.stringify(seriesRecords));
-    if (localStorage.getItem("seriesRecords").length !== 0) {
-      setSeriesRecords(localStorage.getItem("seriesRecords"));
-    }
   }, [seriesRecords]);
 
   return (
@@ -58,13 +57,14 @@ function AddSeries() {
             <div className="form-group mb-3">
               <label className="form-label">Series Season</label>
               <select
-                className="form-control"
+                className="form-select"
                 aria-label="series-season"
                 value={seriesInfo.season}
                 onChange={(e) =>
                   setSeriesInfo({ ...seriesInfo, season: e.target.value })
                 }
               >
+                <option selected>Select Season</option>
                 <option value="Season 1">Season 1</option>
                 <option value="Season 2">Season 2</option>
                 <option value="Season 3">Season 3</option>
@@ -99,18 +99,31 @@ function AddSeries() {
           </button>
         </form>
       </div>
-      <div className="row justify-content-center mx-auto">
+      <div className="row justify-content-center mx-auto mt-3">
         <div className="col-md">
-          <table>
+          <table className="table table-bordered table-hover">
             <thead>
               <tr>
-                <th>Series Data</th>
+                <th>#</th>
+                <th>Series Name</th>
+                <th>Starting Year</th>
+                <th>Season</th>
+                <th>Watched</th>
               </tr>
             </thead>
-            <tbody>
-              <tr>
-                <td>{localStorage.getItem("seriesRecords")}</td>
-              </tr>
+            <tbody className="table-group-divider">
+              {seriesRecords &&
+                seriesRecords.map(function (series, idx) {
+                  return (
+                    <tr>
+                      <td>{idx + 1}</td>
+                      <td>{series.name}</td>
+                      <td>{series.startingYear}</td>
+                      <td>{series.season}</td>
+                      <td>{series.watched ? "✅" : "❌"}</td>
+                    </tr>
+                  );
+                })}
             </tbody>
           </table>
         </div>
